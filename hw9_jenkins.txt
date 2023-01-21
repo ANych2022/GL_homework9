@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('hw9-build') {
+            steps {
+                echo 'buildind'
+                sh '''
+                    echo "line1"
+                '''
+            }
+        }
+        stage('hw9-test') {
+            steps {
+                echo 'testing'
+            }
+        }
+        stage('hw9-notification') {
+            steps {
+                echo 'notificationing'
+            }
+        }
+    }
+}
