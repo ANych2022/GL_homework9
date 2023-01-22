@@ -4,9 +4,10 @@ pipeline {
     stages {
         stage('hw9-build') {
             steps {
-                echo 'buildind+'
+                echo 'build'
                 sh '''
-                    echo "line1"
+                    echo "----BUILD----"
+                    mv index.html /var/www/html/
                 '''
             }
         }
