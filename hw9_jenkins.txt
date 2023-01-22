@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('hw9-build') {
             steps {
-                echo 'buildind'
+                echo 'buildind+'
                 sh '''
                     echo "line1"
                 '''
