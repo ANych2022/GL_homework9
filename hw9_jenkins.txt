@@ -6,20 +6,22 @@ pipeline {
             steps {
                 echo 'build'
                 sh '''
-                    echo "----BUILD----"
-                    mv index.html /usr/share/nginx/html
-                '''
-            }
+                    
+                    echo "------------test started-----------"
+                    result=`grep "Homework" index.html | wc -l`
+                    echo $result
+                    if [ "$result" = "1" ]
+                    then
+	                    echo "test passed"
+                    else
+	                    echo "test failed"
+	                exit 1
+                    fi
+                    echo "------------test ended-------------"
+                    
+                    '''
+         
         }
-        stage('hw9-test') {
-            steps {
-                echo 'testing'
-            }
-        }
-        stage('hw9-notification') {
-            steps {
-                echo 'notificationing'
-            }
-        }
+       }
     }
 }
